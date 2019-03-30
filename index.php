@@ -15,6 +15,15 @@ $descricaoCurso3 = "Curso de Operador de Fotocópia";
 $valorCurso3 =  630.99;
 $imagemCurso3 = "marketing.jpg";
 
+$usuario = [
+
+    "nome" => "Marcelo",
+    "email" => "mjbezer@hotmail.com",
+    "senha" => "123456",
+    "nivelAcesso" => mt_rand(0, 1)
+];
+
+
 
 ?>
 
@@ -27,7 +36,7 @@ $imagemCurso3 = "marketing.jpg";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Cursos</title>
 </head>
@@ -41,12 +50,33 @@ $imagemCurso3 = "marketing.jpg";
                     <img alt="Cursos On-Line" src="...">
                 </a>
             </div>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Pesquise Aqui">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <?php if ($usuario["nivelAcesso"] == 1) : ?>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ações<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Adicionar Produto</a></li>
+                                <li><a href="#">Editar Produto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <?php endif; ?>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Pesquise Aqui">
+                        </div>
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </form>
+                    <p class="navbar-text navbar-right">Logado como: 
+                     <strong>
+                        <a href="#" class="navbar-link"><?php echo $usuario["nome"]; ?></a>
+                    </strong>    
+                    <p>
                 </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>
+            </div>
         </div>
     </nav>
     <div class="container">
@@ -93,7 +123,10 @@ $imagemCurso3 = "marketing.jpg";
 
 
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 
 </html> 
