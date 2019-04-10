@@ -12,6 +12,7 @@ $pessoa = "Meu Nome";
         "Nome" => "Marcelo Bezerra",
         "Fruta" => "Abacaxi",
         "Idade" => 17
+
     ];
 
     $arrayAssoc["Time"] = "Corintians";

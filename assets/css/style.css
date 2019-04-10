@@ -1,5 +1,5 @@
-.thumbnail a > img, 
-.thumbnail > img {
-    height: 250px;
-    width:  36  0px;
+.thumbnail a>img, 
+.thumbnail>img {
+    height: 300px;
+    width: 600px;
 }
